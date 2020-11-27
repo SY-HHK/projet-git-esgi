@@ -122,3 +122,17 @@ void decoupeAttribut(FILE *f, char *nomBalise ,struct Tag *tab, int longeur) {
     }
     tab->attributsAmount= nombreAtt;
 }
+
+void baliseFermante(FILE * f,struct Tag* tab){;
+    char nomBalise[30];
+    int compteur = 0;
+    char c = (char)fgetc(f);
+    while ( c != '>'){
+        nomBalise[compteur]= c;
+        compteur ++;
+        c = (char)fgetc(f);
+    }
+    nomBalise[compteur]='\0';
+    tab->end = malloc(sizeof(char *)* strlen(nomBalise));
+    strcpy(tab->end,nomBalise);
+}
