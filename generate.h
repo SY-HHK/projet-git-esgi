@@ -44,6 +44,7 @@ struct Attr {
 } Attr;
 
 struct Tag *createTag(char * start, struct Attr ** attrList, int AttrAmount, struct Tag **childList, int childAmount, char* content, char *end);
+struct DtdTag *createDtdTag(char *tagName, struct DtdAttr ** dtdAttrList, int dtdAttrAmount, struct DtdTag **childs, int childsAmount, char *contentType, int obligation);
 
 
 #endif //PROJET_GIT_ESGI_GENERATE_H

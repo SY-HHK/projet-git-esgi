@@ -24,3 +24,24 @@ struct Tag * createTag(char * start, struct Attr ** attrList, int attrAmount, st
 
     return newTag;
 }
+
+struct DtdTag *createDtdTag(char *tagName, struct DtdAttr ** dtdAttrList, int dtdAttrAmount, struct DtdTag **childs, int childsAmount, char *contentType, int obligation) {
+    struct DtdTag *dtdTag = malloc(sizeof(DtdTag));
+
+    dtdTag->tagName = malloc(sizeof(char*) * strlen(tagName));
+    strcpy(dtdTag->tagName, tagName);
+
+    dtdTag->attributsAmount = dtdAttrAmount;
+    //dtdTag->attributs = malloc(sizeof(DtdAttr) * dtdAttrAmount);
+    dtdTag->attributs = dtdAttrList;
+
+    dtdTag->childsAmount = childsAmount;
+    dtdTag->childTags = childs;
+
+    dtdTag->contentType = malloc(sizeof(char) * strlen(contentType));
+    strcpy(dtdTag->contentType, contentType);
+
+    dtdTag->obligation = obligation;
+
+    return dtdTag;
+}
