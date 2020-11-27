@@ -7,6 +7,8 @@
 
 #endif //PROJET_GIT_ESGI_READXML_H
 
+#include "generate.h"
+
 void fermetureFichier(FILE*);
 void baliseOuvrante(FILE * ,struct Tag*); // lecture de la balise ouvrante
 void lecturecontent(FILE *, struct Tag*); // lecture du content entre 2 balises
