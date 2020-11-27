@@ -45,3 +45,32 @@ struct DtdTag *createDtdTag(char *tagName, struct DtdAttr ** dtdAttrList, int dt
 
     return dtdTag;
 }
+
+struct DtdAttr *createDtdAttr(char *name, char ** values, int valuesSize, char * type) {
+    struct DtdAttr *newDtdAttr = malloc(sizeof(DtdAttr));
+
+    newDtdAttr->name = malloc(sizeof(char) * strlen(name));
+    strcpy(newDtdAttr->name, name);
+
+    if (valuesSize > 0) {
+        newDtdAttr->type = NULL;
+        newDtdAttr->valuesSize = valuesSize;
+        newDtdAttr->values = malloc(sizeof(char *) * valuesSize);
+        for (int i = 0; i < valuesSize; ++i) {
+            newDtdAttr->values[i] = malloc(sizeof(char) * strlen(values[i]));
+            strcpy(newDtdAttr->values[i], values[i]);
+        }
+    }
+    else {
+        newDtdAttr->type = malloc(sizeof(char) * 50);
+        strcpy(newDtdAttr->type, type);
+        newDtdAttr->values = NULL;
+        newDtdAttr->valuesSize = 0;
+    }
+
+    newDtdAttr->obligation = 1;
+
+    return newDtdAttr;
+}
+
+
