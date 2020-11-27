@@ -110,4 +110,13 @@ struct DtdAttr ** createDtdAttrList(char * tagName) {
     }
 }
 
+struct Attr ** createAttrList(int nbAttr) {
+
+    struct Attr **attrList = malloc(sizeof(Attr) * nbAttr);
+
+    attrList[0] = createAttr("name", "Charles");
+    attrList[1] = createAttr("name", "Jack");
+
+    return attrList;
+}
 

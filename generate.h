@@ -48,6 +48,7 @@ struct DtdTag *createDtdTag(char *tagName, struct DtdAttr ** dtdAttrList, int dt
 struct DtdAttr *createDtdAttr(char *name, char ** values, int valuesSize, char * type);
 struct Attr *createAttr(char* name, char* value);
 struct DtdAttr **createDtdAttrList(char *tagName);
+struct Attr **createAttrList();
 
 
 #endif //PROJET_GIT_ESGI_GENERATE_H
