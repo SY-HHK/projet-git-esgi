@@ -8,3 +8,4 @@
 #endif //PROJET_GIT_ESGI_READXML_H
 
 void fermetureFichier(FILE*);
+void baliseOuvrante(FILE * ,struct Tag*); // lecture de la balise ouvrante
