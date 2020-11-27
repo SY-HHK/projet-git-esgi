@@ -44,3 +44,23 @@ void baliseOuvrante(FILE *f, struct Tag *tab){ // detection de la balise ouvrant
         decoupeAttribut(f,tempo, tab, compteur);
     }
 }
+
+void lecturecontent(FILE *f, struct Tag *tab){ // lecture des donnée jusque detection de la balise de fermeture ( </ )
+    char a = (char)fgetc(f);
+    char content[30]; // variable temporaire de stockage d'information
+    int i =0;
+    while ( a != '<'){
+        /* if(i==0 && content[i]== ' ')
+         {
+             a = (char)fgetc(f);
+         }*/
+        a = (char)fgetc(f);
+        content[i] = a;
+
+        i++;
+    }
+    content[i-2]='\0';
+    tab->content = malloc(sizeof(char )* strlen(content));
+    strcpy(tab->content ,content);
+
+}
