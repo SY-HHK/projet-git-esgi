@@ -73,4 +73,15 @@ struct DtdAttr *createDtdAttr(char *name, char ** values, int valuesSize, char *
     return newDtdAttr;
 }
 
+struct Attr *createAttr(char* name, char* value) {
+    struct Attr * newAttr = malloc(sizeof(Attr));
+
+    newAttr->name = malloc(sizeof(char) * strlen(name));
+    strcpy(newAttr->name, name);
+    newAttr->value = malloc(sizeof(char) * strlen(value));
+    strcpy(newAttr->value, value);
+
+    return newAttr;
+}
+
 
