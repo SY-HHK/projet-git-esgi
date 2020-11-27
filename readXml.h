@@ -6,3 +6,5 @@
 #define PROJET_GIT_ESGI_READXML_H
 
 #endif //PROJET_GIT_ESGI_READXML_H
+
+void fermetureFichier(FILE*);
