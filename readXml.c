@@ -145,3 +145,10 @@ void lectureFichier(FILE* f, struct Tag *tab){
     lecturecontent(f,tab);
     baliseFermante(f,tab);
 }
+
+void AfficherFichier(struct Tag *tab)
+{
+    printf(" \n %s", tab->start);
+    printf(" \n %s", tab->content);
+    printf(" \n %s", tab->end);
+}
