@@ -4,4 +4,4 @@ project(projet-git-esgi C)
 set(CMAKE_C_STANDARD 99)
 
 # Add an executable compiled from hello.c
-add_executable(projet-git-esgi main.c readXml.c readXml.h generate.c generate.h)
+add_executable(projet-git-esgi main.c readXml.c readXml.h generate.c generate.h compare.c compare.h)
