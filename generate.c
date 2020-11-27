@@ -84,4 +84,30 @@ struct Attr *createAttr(char* name, char* value) {
     return newAttr;
 }
 
+struct DtdAttr ** createDtdAttrList(char * tagName) {
+
+    if (strstr(tagName, "bonjour")) {
+        struct DtdAttr **attrList = malloc(sizeof(DtdAttr) * 2);
+
+        attrList[0] = createDtdAttr("prenom", NULL, 0, "CDATA");
+        attrList[1] = createDtdAttr("question", NULL, 0, "CDATA");
+
+        return attrList;
+    }
+    if (strstr(tagName, "foot")) {
+        struct DtdAttr **attrList = malloc(sizeof(DtdAttr));
+
+        attrList[0] = createDtdAttr("equipe", NULL, 0, "CDATA");
+
+        return attrList;
+    }
+    if (strstr(tagName, "etrange")) {
+        struct DtdAttr **attrList = malloc(sizeof(DtdAttr));
+
+        attrList[0] = createDtdAttr("vrai", NULL, 0, "CDATA");
+
+        return attrList;
+    }
+}
+
 
